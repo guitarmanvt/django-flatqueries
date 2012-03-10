@@ -1,0 +1,19 @@
+[
+  {
+    "pk": 1,
+    "model": "flatqueries.query",
+    "fields": {
+      "sql": "SELECT id, title, description FROM flatqueries_query;",
+      "description": "List of queries defined in flatqueries app.",
+      "title": "Query List"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "sites.site",
+    "fields": {
+      "domain": "localhost:8000",
+      "name": "Flatqueries Demo Site"
+    }
+  }
+]
