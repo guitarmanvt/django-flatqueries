@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ query.title }}</h1>
+<em>{{ query.description }}</em>
+<table>
+<tr>
+{% for header in headers %}
+  <th>{{ header }}</th>
+{% endfor %}
+</tr>
+{% for row in rows %}
+<tr>
+  {% for col in row %}
+  <td>{{ col }}</td>
+  {% endfor %}
+</tr>
+{% empty %}
+<tr>
+  <td>Query returned no results.</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock content %}
