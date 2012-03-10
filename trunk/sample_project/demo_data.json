@@ -9,6 +9,15 @@
     }
   },
   {
+    "pk": 2,
+    "model": "flatqueries.query",
+    "fields": {
+      "sql": "select * from django_content_type order by name;",
+      "description": "Info from the guts of Django.",
+      "title": "All Content Types"
+    }
+  },
+  {
     "pk": 1,
     "model": "sites.site",
     "fields": {
@@ -17,3 +26,4 @@
     }
   }
 ]
+
