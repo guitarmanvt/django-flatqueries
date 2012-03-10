@@ -20,7 +20,7 @@ class Query(models.Model):
         """
         cursor = connection.cursor()
         cursor.execute(self.sql)
-        headers = cursor.description
+        headers = [ desc[0] for desc in cursor.description ]
         rows = cursor.fetchall()
         return (headers, rows)
         

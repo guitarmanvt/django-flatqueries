@@ -4,12 +4,12 @@
 <h1>{{ query.title }}</h1>
 <em>{{ query.description }}</em>
 <hr>
-<form action="." method="POST">
+<form action="." method="POST">{% csrf_token %}
 <input type="submit" value="Run Query">
 </form>
 <hr>
 {% if headers %}
-<table>
+<table class="flatquery_results" border="1">
 <tr>
 {% for header in headers %}
   <th>{{ header }}</th>
