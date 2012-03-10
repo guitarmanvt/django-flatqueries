@@ -1,4 +1,4 @@
-from django.db import models
+from django.db import connection, models
 
 MAX_QUERY_TITLE = 50
 
@@ -11,6 +11,18 @@ class Query(models.Model):
     @models.permalink
     def get_absolute_url(self):
         return ('flatqueries.views.run', (), { 'id': str(self.id) })
+     
+    def run(self):   
+        """
+        Executes sql and returns a tuple of (headers, rows), where:
+        - headers = list of column names
+        - rows = list of rows, where each row is a list of column values
+        """
+        cursor = connection.cursor()
+        cursor.execute(self.sql)
+        headers = cursor.description
+        rows = cursor.fetchall()
+        return (headers, rows)
         
     class Meta:
         verbose_name = 'flat query'

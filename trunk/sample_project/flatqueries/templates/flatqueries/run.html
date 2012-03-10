@@ -3,6 +3,12 @@
 {% block content %}
 <h1>{{ query.title }}</h1>
 <em>{{ query.description }}</em>
+<hr>
+<form action="." method="POST">
+<input type="submit" value="Run Query">
+</form>
+<hr>
+{% if headers %}
 <table>
 <tr>
 {% for header in headers %}
@@ -21,4 +27,5 @@
 </tr>
 {% endfor %}
 </table>
+{% endif %}
 {% endblock content %}
