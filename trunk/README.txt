@@ -1,7 +1,8 @@
 This project runs out-of-the box on Django 1.3. Here's how:
 
 1. Grab the code.
-2. cd /path/to/sample_project
+    svn checkout http://django-flatqueries.googlecode.com/svn/trunk django-flatqueries-demo
+2. cd django-flatqueries-demo/sample_project
 3. Create the database.
     python manage.py syncdb  
     - Yes, create a superuser
@@ -20,7 +21,13 @@ If you put this on another domain, you need to make sure your "site" values
 are correct. Otherwise, the "view on site" button will not work correctly!
 
 SECURITY
-Basically, there is none, beyond requiring login. So, be careful not to let
-query URLs fall into the hands of users you don't want running them. If you
-ignore this warning, then any trouble that results is YOUR OWN FAULT. :P
+For editing, the standard Django Admin permissions apply. Any superuser will
+be able to edit, as well as any staff person with the appropriate permissions.
+
+For running queries, an additional permission is needed for staff users.
+Assign 'flatqueries.can_run_query' to grant this permission to users or groups.
+
+Still, be careful not to let query URLs fall into the hands of users you 
+don't want running them. If you ignore this warning, then any trouble that 
+results is YOUR OWN FAULT. :P
 

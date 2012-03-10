@@ -27,5 +27,7 @@ class Query(models.Model):
     class Meta:
         verbose_name = 'flat query'
         verbose_name_plural = 'flat queries'
-
+        permissions = (
+            ('can_run_query', 'Can run query'),
+        )
 
