@@ -1,0 +1,4 @@
+django_flatqueries.egg-info
+**/__pycache__
+**/**.pyc
+**/**.sqlite3

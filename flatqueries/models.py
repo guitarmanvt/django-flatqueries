@@ -8,11 +8,11 @@ class Query(models.Model):
     description = models.TextField(blank=True, null=True)
     sql = models.TextField(blank=False, null=False)
 
-    @models.permalink
+    # @models.permalink
     def get_absolute_url(self):
         return ('flatqueries.views.run', (), { 'id': str(self.id) })
-     
-    def run(self):   
+
+    def run(self):
         """
         Executes sql and returns a tuple of (headers, rows), where:
         - headers = list of column names
@@ -23,7 +23,7 @@ class Query(models.Model):
         headers = [ desc[0] for desc in cursor.description ]
         rows = cursor.fetchall()
         return (headers, rows)
-        
+
     class Meta:
         verbose_name = 'flat query'
         verbose_name_plural = 'flat queries'
