@@ -17,4 +17,4 @@ def run(request, id):
         'headers': headers,
         'rows': rows,
     }
-    return render('flatqueries/run.html', tv)
+    return render(request, 'flatqueries/run.html', tv)

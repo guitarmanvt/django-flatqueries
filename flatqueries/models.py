@@ -1,4 +1,5 @@
 from django.db import connection, models
+from django.urls import reverse
 
 MAX_QUERY_TITLE = 50
 
@@ -10,7 +11,7 @@ class Query(models.Model):
 
     # @models.permalink
     def get_absolute_url(self):
-        return ('flatqueries.views.run', (), { 'id': str(self.id) })
+        return reverse('run_flatquery', kwargs={ "id": self.pk })
 
     def run(self):
         """
