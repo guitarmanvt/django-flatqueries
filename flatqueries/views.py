@@ -1,11 +1,10 @@
 # Django imports
-#from django.contrib.auth.decorators import permission_required
-#from django.core.context_processors import csrf
+from django.contrib.auth.decorators import permission_required
 from django.shortcuts import render
 # Local imports
 from flatqueries.models import Query
 
-#@permission_required('flatqueries.can_run_query')
+@permission_required('flatqueries.can_run_query')
 def run(request, id):
     query = Query.objects.get(pk=id)
     if request.method=='POST':

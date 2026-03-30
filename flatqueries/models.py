@@ -9,7 +9,6 @@ class Query(models.Model):
     description = models.TextField(blank=True, null=True)
     sql = models.TextField(blank=False, null=False)
 
-    # @models.permalink
     def get_absolute_url(self):
         return reverse('run_flatquery', kwargs={ "id": self.pk })
 
