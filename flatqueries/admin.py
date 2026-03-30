@@ -1,5 +1,5 @@
 from django.contrib import admin
-from models import Query
+from flatqueries.models import Query
 
 class QueryAdmin(admin.ModelAdmin):
     list_display = ['title', 'description']

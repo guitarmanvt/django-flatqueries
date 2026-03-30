@@ -1,9 +1,8 @@
 # Django imports
 from django.contrib.auth.decorators import permission_required
-from django.core.context_processors import csrf
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 # Local imports
-from models import Query
+from flatqueries.models import Query
 
 @permission_required('flatqueries.can_run_query')
 def run(request, id):
@@ -15,7 +14,6 @@ def run(request, id):
     tv = {
         'query': query,
         'headers': headers,
-        'rows': rows,        
+        'rows': rows,
     }
-    tv.update(csrf(request))
-    return render_to_response('flatqueries/run.html', tv)
+    return render(request, 'flatqueries/run.html', tv)
