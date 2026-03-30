@@ -17,16 +17,19 @@ If you already have a working Django 4+ project and you just want to install the
 
     python manage.py migrate
 
+5. Make sure you have a template that can be resolved as `base.html` and
+   contains a `content` block.
+
 ## Getting the sample project
 
-This project runs out-of-the box on Django 1.3. Here's how:
+This project runs out-of-the box on Django 4.2.17 (Python 3.8.10 and 3.12.3).
 
 1. Grab the code.
     git clone https://github.com/guitarmanvt/django-flatqueries demo
-2. cd demo/sample_project
-3. Create the database.
-    python manage.py syncdb
-    - Yes, create a superuser
+2. cd demo/sample
+3. Create the database and a superuser.
+    python manage.py migrate
+    python manage.py createsuperuser
 4. Load the demo data. \*(Optional, but see deployment note)
     python manage.py loaddata demo_data.json
 5. Start the local development server.
