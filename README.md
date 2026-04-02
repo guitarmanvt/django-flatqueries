@@ -60,3 +60,10 @@ Assign `flatqueries.can_run_query` to grant this permission to users or groups.
 Still, be careful not to let query URLs fall into the hands of users you
 don't want running them. If you ignore this warning, then any trouble that
 results is YOUR OWN FAULT. :P
+
+## Changelog
+
+### 1.0.1
+
+* Added changelog
+* Included (missing) migrations in package
