@@ -2,16 +2,21 @@ from setuptools import setup
 
 setup(
     name = 'django-flatqueries',
-    version = '1.0.0',
+    version = '1.0.1',
     author = 'John Samuel Anderson',
     author_email = 'john@andersoninnovative.com',
     description = 'Flatpage-like SQL queries for Django.',
     long_description=open('README.md').read(),
+    long_description_content_type="text/markdown",
+    include_package_data=True,
     install_requires = [ 'Django' ],
     license = 'MIT',
     packages = ['flatqueries'],
     package_dir = {'flatqueries': 'flatqueries'},
-    package_data = {'flatqueries': ['templates/flatqueries/*.html']},
+    package_data = {'flatqueries': [
+        'migrations/*.py',
+        'templates/flatqueries/*.html',
+    ]},
     url = 'https://github.com/guitarmanvt/django-flatqueries',
     zip_safe = True,
 )
