@@ -63,7 +63,10 @@ results is YOUR OWN FAULT. :P
 
 ## Changelog
 
+### 1.0.2
+
+* Included (missing) migrations in package
+
 ### 1.0.1
 
 * Added changelog
-* Included (missing) migrations in package
